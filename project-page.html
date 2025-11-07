@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Магазин косметики — Товар</title>
+    <link rel="stylesheet" href="./css/main.css">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
+
+<body>
+    <!-- ===== НАВИГАЦИЯ ===== -->
+    <nav class="nav">
+        <div class="container">
+            <div class="nav-row">
+                <a href="./index.html" class="logo">
+                    <img src="./img/logo.png" alt="Логотип Белоснежка" class="logo__img">
+                    <strong>Магазин косметики</strong> Белоснежка
+                </a>
+
+                <ul class="nav-list">
+                    <li class="nav-list__item"><a href="./index.html" class="nav-list__link">Назад</a></li>
+                    <li class="nav-list__item">
+                        <button class="auth-btn" id="authBtn">Авторизация</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== КАРТОЧКА ТОВАРА ===== -->
+    <main class="section">
+        <div class="container">
+            <div class="project-details">
+                <h1 class="title-1">Название товара</h1>
+                <img src="./img/projects/01.jpg" alt="Изображение товара" class="project-details__cover">
+                <div class="project-details__desc">
+                    <p>Описание товара появится здесь автоматически.</p>
+                </div>
+                <a href="#!" class="btn-outline" id="order-btn">Оформить заказ</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- ===== МОДАЛЬНОЕ ОКНО ЗАКАЗА ===== -->
+    <div class="modal" id="order-modal">
+        <div class="modal-content">
+            <span class="close-btn" id="close-modal">&times;</span>
+            <h2>Оформление заказа</h2>
+            <form id="order-form">
+                <label>Товар</label>
+                <input type="text" id="product-name" readonly>
+
+                <label>Телефон</label>
+                <input type="tel" id="phone" placeholder="+7 (___) ___-__-__" required>
+
+                <label>Адрес доставки</label>
+                <textarea id="address" rows="3" placeholder="Введите адрес доставки" required></textarea>
+
+                <!-- Google reCAPTCHA -->
+                <div class="g-recaptcha" data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"></div>
+
+                <button type="submit">Отправить заказ</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- ===== МОДАЛЬНОЕ ОКНО АВТОРИЗАЦИИ ===== -->
+    <div class="modal" id="auth-modal">
+        <div class="modal-content">
+            <span class="close-btn" id="close-auth">&times;</span>
+            <h2 id="auth-title">Авторизация</h2>
+            <form id="auth-form">
+                <label>Имя пользователя</label>
+                <input type="text" id="auth-username" required placeholder="Введите имя">
+                <label>Пароль</label>
+                <input type="password" id="auth-password" required placeholder="Введите пароль">
+                <button type="submit" id="auth-submit">Войти</button>
+                <p style="text-align:center; margin-top:10px;">
+                    Нет аккаунта? <a href="#" id="switch-register">Зарегистрироваться</a>
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <!-- ===== ПОДВАЛ ===== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__wrapper">
+                <div class="copyright">
+                    <p>© 2025 belosnejkashpop.ru.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== ПОДКЛЮЧЕНИЕ JS ===== -->
+    <script src="./js/main.js"></script>
+
+    <!-- ===== ДИНАМИЧЕСКИЕ ДАННЫЕ ТОВАРА ===== -->
+    <script>
+        const products = {
+            1: {
+                title: "Набор косметики № 1",
+                img: "./img/projects/01.jpg",
+                desc: "Набор косметики № 1 включает пудру, румяна и тени в мягких пастельных тонах. Идеален для повседневного макияжа."
+            },
+            2: {
+                title: "Набор косметики № 2",
+                img: "./img/projects/02.jpg",
+                desc: "Роскошный набор из 6 предметов — всё, что нужно для дневного и вечернего макияжа: тон, пудра, румяна, тушь, тени и помада."
+            },
+            3: {
+                title: "Набор косметики № 3",
+                img: "./img/projects/03.jpg",
+                desc: "Подарочный набор с увлажняющими средствами и блесками для губ. Подходит для сухой и чувствительной кожи."
+            },
+            4: {
+                title: "Набор косметики № 4",
+                img: "./img/projects/04.jpg",
+                desc: "Профессиональный набор косметики с палеткой теней, хайлайтером и контурингом. Подходит для визажистов."
+            },
+            5: {
+                title: "Набор косметики № 5",
+                img: "./img/projects/05.jpg",
+                desc: "Компактный дорожный набор из трёх универсальных средств: тональный крем, тушь и помада."
+            },
+            6: {
+                title: "Набор косметики № 6",
+                img: "./img/projects/06.jpg",
+                desc: "Лимитированный набор с косметикой на основе натуральных масел и экстрактов. Подходит для любого типа кожи."
+            }
+        };
+
+        // Получаем ID товара из URL
+        const params = new URLSearchParams(window.location.search);
+        const id = params.get("id");
+        const product = products[id];
+
+        if (product) {
+            document.querySelector(".title-1").textContent = product.title;
+            document.querySelector(".project-details__cover").src = product.img;
+            document.querySelector(".project-details__desc p").textContent = product.desc;
+            document.getElementById("product-name").value = product.title;
+        } else {
+            document.querySelector(".title-1").textContent = "Товар не найден";
+            document.querySelector(".project-details__cover").style.display = "none";
+        }
+    </script>
+</body>
+</html>

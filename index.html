@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Магазин косметики — Каталог</title>
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+
+<body>
+    <!-- ===== НАВИГАЦИЯ ===== -->
+    <nav class="nav">
+        <div class="container">
+            <div class="nav-row">
+                <a href="./index.html" class="logo">
+                    <img src="./img/logo.png" alt="Логотип Белоснежка" class="logo__img">
+                    <strong>Магазин косметики</strong> Белоснежка
+                </a>
+
+                <ul class="nav-list">
+                    <li class="nav-list__item"><a href="./index.html" class="nav-list__link nav-list__link--active">Каталог</a></li>
+                    <li class="nav-list__item"><a href="./contacts.html" class="nav-list__link">Контакты</a></li>
+                    <li class="nav-list__item">
+                        <button class="auth-btn" id="authBtn">Авторизация</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== КАТАЛОГ ===== -->
+    <main class="section">
+        <div class="container">
+            <h2 class="title-1">Каталог товаров</h2>
+            <ul class="projects">
+                <li class="project">
+                    <a href="./project-page.html?id=1" class="btn-order-wrap">
+                        <img src="./img/projects/01.jpg" alt="Project img" class="project__img">
+                        <h3 class="project__title">Набор косметики № 1</h3>
+                    </a>
+                </li>
+                <li class="project">
+                    <a href="./project-page.html?id=2" class="btn-order-wrap">
+                        <img src="./img/projects/02.jpg" alt="Project img" class="project__img">
+                        <h3 class="project__title">Набор косметики № 2</h3>
+                    </a>
+                </li>
+                <li class="project">
+                    <a href="./project-page.html?id=3" class="btn-order-wrap">
+                        <img src="./img/projects/03.jpg" alt="Project img" class="project__img">
+                        <h3 class="project__title">Набор косметики № 3</h3>
+                    </a>
+                </li>
+                <li class="project">
+                    <a href="./project-page.html?id=4" class="btn-order-wrap">
+                        <img src="./img/projects/04.jpg" alt="Project img" class="project__img">
+                        <h3 class="project__title">Набор косметики № 4</h3>
+                    </a>
+                </li>
+                <li class="project">
+                    <a href="./project-page.html?id=5" class="btn-order-wrap">
+                        <img src="./img/projects/05.jpg" alt="Project img" class="project__img">
+                        <h3 class="project__title">Набор косметики № 5</h3>
+                    </a>
+                </li>
+                <li class="project">
+                    <a href="./project-page.html?id=6" class="btn-order-wrap">
+                        <img src="./img/projects/06.jpg" alt="Project img" class="project__img">
+                        <h3 class="project__title">Набор косметики № 6</h3>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </main>
+
+    <!-- ===== МОДАЛКА АВТОРИЗАЦИИ ===== -->
+    <div class="modal" id="auth-modal">
+        <div class="modal-content">
+            <span class="close-btn" id="close-auth">&times;</span>
+            <h2 id="auth-title">Авторизация</h2>
+            <form id="auth-form">
+                <label>Имя пользователя</label>
+                <input type="text" id="auth-username" required placeholder="Введите имя">
+                <label>Пароль</label>
+                <input type="password" id="auth-password" required placeholder="Введите пароль">
+                <button type="submit" id="auth-submit">Войти</button>
+                <p style="text-align:center; margin-top:10px;">
+                    Нет аккаунта? <a href="#" id="switch-register">Зарегистрироваться</a>
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <!-- ===== ПОДВАЛ ===== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__wrapper">
+                <div class="copyright">
+                    <p>© 2025 belosnejkashpop.ru.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== JS ===== -->
+    <script src="./js/main.js"></script>
+</body>
+</html>

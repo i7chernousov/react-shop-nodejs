@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Магазин косметики — Контакты</title>
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+    <!-- ===== НАВИГАЦИЯ ===== -->
+    <nav class="nav">
+        <div class="container">
+            <div class="nav-row">
+                <a href="./index.html" class="logo">
+                    <img src="./img/logo.png" alt="Логотип Белоснежка" class="logo__img">
+                    <strong>Магазин косметики</strong> Белоснежка
+                </a>
+
+                <ul class="nav-list">
+                    <li class="nav-list__item"><a href="./index.html" class="nav-list__link">Каталог</a></li>
+                    <li class="nav-list__item"><a href="./contacts.html" class="nav-list__link nav-list__link--active">Контакты</a></li>
+                    <li class="nav-list__item">
+                        <button class="auth-btn" id="authBtn">Авторизация</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== ОСНОВНОЙ КОНТЕНТ ===== -->
+    <main class="section">
+        <div class="container">
+            <h1 class="title-1">Контакты</h1>
+
+            <ul class="content-list">
+                <li class="content-list__item">
+                    <h2 class="title-2">Адрес</h2>
+                    <p>г. Москва, ул. Цветочная, д. 7</p>
+                </li>
+                <li class="content-list__item">
+                    <h2 class="title-2">Телефон</h2>
+                    <p><a href="tel:+78001234567">+7 (800) 123-45-67</a></p>
+                </li>
+                <li class="content-list__item">
+                    <h2 class="title-2">Email</h2>
+                    <p><a href="mailto:belosnejkashpop@mail.ru">belosnejkashpop@mail.ru</a></p>
+                </li>
+            </ul>
+        </div>
+    </main>
+
+    <!-- ===== МОДАЛЬНОЕ ОКНО АВТОРИЗАЦИИ ===== -->
+    <div class="modal" id="auth-modal">
+        <div class="modal-content">
+            <span class="close-btn" id="close-auth">&times;</span>
+            <h2 id="auth-title">Авторизация</h2>
+            <form id="auth-form">
+                <label>Имя пользователя</label>
+                <input type="text" id="auth-username" required placeholder="Введите имя">
+                <label>Пароль</label>
+                <input type="password" id="auth-password" required placeholder="Введите пароль">
+                <button type="submit" id="auth-submit">Войти</button>
+                <p style="text-align:center; margin-top:10px;">
+                    Нет аккаунта? <a href="#" id="switch-register">Зарегистрироваться</a>
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <!-- ===== ПОДВАЛ ===== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__wrapper">
+                <div class="copyright">
+                    <p>© 2025 belosnejkashpop.ru.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== ПОДКЛЮЧЕНИЕ JS ===== -->
+    <script src="./js/main.js"></script>
+</body>
+</html>
